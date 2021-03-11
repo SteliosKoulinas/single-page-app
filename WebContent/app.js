@@ -1,14 +1,14 @@
 $(function() {
-	var $name = $('#name');
+	var $user = $('#name');
 	$.ajax({
 		url: 'http://localhost:8080/single.page.app/rest/users',
 		type: 'get',
 		dataType: 'JSON',
 		success: function(response) {
 
-			$.each(response, function(i, data) {
+			$.each(response, function(i, user) {
 
-				$name.append('<tr><td>' + data.name + '</td><td>' + data.surname + '</td><td>' + data.gender + '</td><td>' + data.birthdate + '</td><td>' + data.workaddress + '</td><td>' + data.homeaddress + '</td></tr>')
+				$user.append('<tr><td>' + user.name + '</td><td>' + user.surname + '</td><td>' + user.gender + '</td><td>' + user.birthdate + '</td><td>' + user.workaddress + '</td><td>' + user.homeaddress + '</td></tr>')
 
 			});
 
